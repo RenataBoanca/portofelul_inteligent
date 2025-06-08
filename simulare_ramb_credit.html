@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul Rambursare Anticipată Credite</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input,
+      select {
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      .credit-row {
+        margin-bottom: 15px;
+      }
+      .result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calcul Rambursare Anticipată Credite</h1>
+
+    <div>
+      <h2>Adăugare credite</h2>
+      <div id="credit-container">
+        <div class="credit-row">
+          <label for="credit1-value">Valoare Credit 1: </label>
+          <input
+            type="number"
+            id="credit1-value"
+            placeholder="Sumă totală credit 1"
+            required
+          />
+          <label for="credit1-rate">Dobândă Credit 1 (%): </label>
+          <input
+            type="number"
+            id="credit1-rate"
+            placeholder="Dobândă credit 1"
+            required
+          />
+          <select id="credit1-type">
+            <option value="fixed">Dobândă fixă</option>
+            <option value="variable">Dobândă variabilă</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="addCredit()">Adaugă alt credit</button>
+    </div>
+
+    <div>
+      <h2>Rambursare anticipată</h2>
+      <label for="payment">Cât dorești să rambursezi anticipat?</label>
+      <input
+        type="number"
+        id="payment"
+        placeholder="Sumă de rambursat anticipat"
+      />
+    </div>
+
+    <div>
+      <h2>Metoda de Rambursare</h2>
+      <select id="method">
+        <option value="snowball">Metoda Bulgărelui de Zăpadă</option>
+        <option value="avalanche">Metoda Avalanșei</option>
+      </select>
+    </div>
+
+    <button onclick="calculate()">Calcul</button>
+
+    <div class="result" id="result"></div>
+
+    <script src="js/calcRamb.js"></script>
+  </body>
+</html>

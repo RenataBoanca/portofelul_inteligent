@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Portofelul Inteligent</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portofelul Inteligent</h1>
+      <nav>
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul id="menu" class="menu">
+          <li><a href="index.php">Incepe aici</a></li>
+          <li><a href="blog.php">Blog Financiar</a></li>
+          <li><a href="resources.html">Independenta financiara</a></li>
+          <li><a href="about.html">Despre mine</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact">
+        <h2>Contactează-mă</h2>
+        <form
+          id="contactForm"
+          action="process_contact.php"
+          method="POST"
+          onsubmit="clearFormAndRedirect()"
+        >
+          <label for="name">Nume:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mesaj:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <!-- Câmp ascuns pentru a specifica că este un formular de contact -->
+          <input type="hidden" name="request_excel" value="false" />
+
+          <button type="submit">Trimite</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Portofelul Inteligent | Educație financiară pentru toți</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator Buget Personal</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/budgetCalculator.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Portofelul Inteligent</h1>
+      <nav>
+        <!-- Butonul hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul id="menu" class="menu">
+          <li><a href="index.php">Incepe aici</a></li>
+          <li><a href="blog.php">Blog Financiar</a></li>
+          <li><a href="resources.html">Independenta financiara</a></li>
+          <li><a href="about.html">Despre mine</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="calculator">
+      <h2>Calculator Buget Personal</h2>
+
+      <h3>Venituri</h3>
+      <div id="income-section" class="subcategories"></div>
+
+      <h3>Cheltuieli</h3>
+      <div id="expenses-section" class="subcategories"></div>
+
+      <button id="calculateBtn">Calculează</button>
+
+      <h3>Rezultat:</h3>
+      <p id="result">Introduceți date și apăsați pe buton.</p>
+
+      <div class="end-section"></div>
+
+      <!-- Secțiune pentru a cere fișierul Excel prin formular de contact -->
+      <section class="request-excel">
+        <h2>Cere fișierul Excel cu articolele</h2>
+        <p>
+          Dacă dorești fișierul Excel cu articolele pentru a-l utiliza pe
+          laptop, completează formularul de mai jos.
+        </p>
+
+        <!-- Formular de contact -->
+        <form action="process_contact.php" method="POST">
+          <label for="name">Nume:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mesaj:</label>
+          <textarea id="message" name="message" rows="4" required>
+              Aș dori să primesc fișierul Excel cu articolele.
+          </textarea>
+
+          <!-- Câmp ascuns pentru a specifica că este o solicitare pentru fișierul Excel -->
+          <input type="hidden" name="request_excel" value="true" />
+
+          <button type="submit">Cere fișierul Excel</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Portofelul Inteligent | Educație financiară pentru toți</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
